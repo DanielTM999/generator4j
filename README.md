@@ -24,6 +24,9 @@ Cada classe representa um tipo específico de elemento HTML e fornece métodos p
 - **`Thead`**: Representa o cabeçalho da tabela (`<thead>`).
 - **`Tbody`**: Representa o corpo da tabela (`<tbody>`).
 - **`Ul`**: Representa uma lista não ordenada (`<ul>`). Método `iterable` para criar múltiplos itens de lista (`<li>`).
+- **`Header`**: Representa um cabeçalho (`<header>`).
+- **`Section`**: Representa uma seção (`<section>`).
+
 
 
 ### Método `iterable`
