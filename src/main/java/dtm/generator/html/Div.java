@@ -12,9 +12,7 @@ public class Div extends HtmlElement{
     
     public <T> Div iterableThis(List<T> items, BiConsumer<T, Div> consumer) {
         for (T item : items) {
-            Div div = this;
-            consumer.accept(item, div);
-            this.content += div.render();
+            consumer.accept(item, this);
         }
         return this;
     }
@@ -33,6 +31,15 @@ public class Div extends HtmlElement{
             Section section = new Section();
             consumer.accept(item, section);
             this.content += section.render();
+        }
+        return this;
+    }
+
+    public <T> Div iterableDiv(List<T> items, BiConsumer<T, Div> consumer) {
+        for (T item : items) {
+            Div div = new Div();
+            consumer.accept(item, div);
+            this.content += div.render();
         }
         return this;
     }

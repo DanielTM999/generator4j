@@ -192,9 +192,7 @@ public class Section extends HtmlElement {
 
     public <T> Section iterableThis(List<T> items, BiConsumer<T, Section> consumer) {
         for (T item : items) {
-            Section div = this;
-            consumer.accept(item, div);
-            this.content += div.render();
+            consumer.accept(item, this);
         }
         return this;
     }

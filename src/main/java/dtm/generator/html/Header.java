@@ -168,9 +168,7 @@ public class Header extends HtmlElement{
 
     public <T> Header iterableThis(List<T> items, BiConsumer<T, Header> consumer) {
         for (T item : items) {
-            Header div = this;
-            consumer.accept(item, div);
-            this.content += div.render();
+            consumer.accept(item, this);
         }
         return this;
     }
