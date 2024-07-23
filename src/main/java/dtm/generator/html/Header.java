@@ -1,5 +1,7 @@
 package dtm.generator.html;
 
+import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import dtm.generator.html.core.HtmlElement;
@@ -161,6 +163,15 @@ public class Header extends HtmlElement{
         Ul ul = new Ul();
         consumer.accept(ul);
         this.content += ul.render();
+        return this;
+    }
+
+    public <T> Header iterableThis(List<T> items, BiConsumer<T, Header> consumer) {
+        for (T item : items) {
+            Header div = this;
+            consumer.accept(item, div);
+            this.content += div.render();
+        }
         return this;
     }
 }

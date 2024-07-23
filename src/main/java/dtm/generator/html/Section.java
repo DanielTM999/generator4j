@@ -1,5 +1,7 @@
 package dtm.generator.html;
 
+import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import dtm.generator.html.core.HtmlElement;
@@ -167,6 +169,33 @@ public class Section extends HtmlElement {
         Ul ul = new Ul();
         consumer.accept(ul);
         this.content += ul.render();
+        return this;
+    }
+
+    public <T> Section iterableDiv(List<T> items, BiConsumer<T, Div> consumer) {
+        for (T item : items) {
+            Div div = new Div();
+            consumer.accept(item, div);
+            this.content += div.render();
+        }
+        return this;
+    }
+
+    public <T> Section iterableSection(List<T> items, BiConsumer<T, Section> consumer) {
+        for (T item : items) {
+            Section section = new Section();
+            consumer.accept(item, section);
+            this.content += section.render();
+        }
+        return this;
+    }
+
+    public <T> Section iterableThis(List<T> items, BiConsumer<T, Section> consumer) {
+        for (T item : items) {
+            Section div = this;
+            consumer.accept(item, div);
+            this.content += div.render();
+        }
         return this;
     }
 }
