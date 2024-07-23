@@ -27,6 +27,13 @@ public class Section extends HtmlElement {
         return this;
     }
 
+    public Section section(Consumer<Section> consumer) {
+        Section section = new Section();
+        consumer.accept(section);
+        this.content += section.render();
+        return this;
+    }
+
     public Section div(Consumer<Div> consumer) {
         Div div = new Div();
         consumer.accept(div);

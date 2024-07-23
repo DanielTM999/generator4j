@@ -30,6 +30,20 @@ public class Body extends HtmlElement {
         return this;
     }
 
+    public Body section(Consumer<Section> consumer) {
+        Section section = new Section();
+        consumer.accept(section);
+        this.content += section.render();
+        return this;
+    }
+
+    public Body header(Consumer<Header> consumer) {
+        Header header = new Header();
+        consumer.accept(header);
+        this.content += header.render();
+        return this;
+    }
+
     public Body h1(String text) {
         this.content += "<h1>" + text + "</h1>";
         return this;
