@@ -17,15 +17,6 @@ public class Div extends HtmlElement{
         return this;
     }
 
-    public <T> Div iterable(List<T> items, BiConsumer<T, Div> consumer) {
-        for (T item : items) {
-            Div div = new Div();
-            consumer.accept(item, div);
-            this.content += div.render();
-        }
-        return this;
-    }
-
     public <T> Div iterableSection(List<T> items, BiConsumer<T, Section> consumer) {
         for (T item : items) {
             Section section = new Section();

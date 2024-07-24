@@ -172,4 +172,22 @@ public class Header extends HtmlElement{
         }
         return this;
     }
+
+    public <T> Header iterableSection(List<T> items, BiConsumer<T, Section> consumer) {
+        for (T item : items) {
+            Section section = new Section();
+            consumer.accept(item, section);
+            this.content += section.render();
+        }
+        return this;
+    }
+
+    public <T> Header iterableDiv(List<T> items, BiConsumer<T, Div> consumer) {
+        for (T item : items) {
+            Div div = new Div();
+            consumer.accept(item, div);
+            this.content += div.render();
+        }
+        return this;
+    }
 }
