@@ -3,6 +3,8 @@ package dtm.generator.html;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
+
 import dtm.generator.html.core.HtmlElement;
 
 public class Div extends HtmlElement{
@@ -186,5 +188,10 @@ public class Div extends HtmlElement{
         return this;
     }
 
-        
+    public Div conditional(Predicate<Div> condition, Consumer<Div> consumer) {
+        if (condition.test(this)) {
+            consumer.accept(this);
+        }
+        return this;
+    }  
 }

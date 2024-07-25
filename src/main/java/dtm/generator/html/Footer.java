@@ -3,6 +3,7 @@ package dtm.generator.html;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import dtm.generator.html.core.HtmlElement;
 
@@ -187,5 +188,12 @@ public class Footer  extends HtmlElement{
         this.content += ul.render();
         return this;
     }
+
+    public Footer conditional(Predicate<Footer> condition, Consumer<Footer> consumer) {
+        if (condition.test(this)) {
+            consumer.accept(this);
+        }
+        return this;
+    }  
     
 }

@@ -3,6 +3,7 @@ package dtm.generator.html;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import dtm.generator.html.core.HtmlElement;
 
@@ -193,6 +194,13 @@ public class Section extends HtmlElement {
     public <T> Section iterableThis(List<T> items, BiConsumer<T, Section> consumer) {
         for (T item : items) {
             consumer.accept(item, this);
+        }
+        return this;
+    }
+
+    public Section conditional(Predicate<Section> condition, Consumer<Section> consumer) {
+        if (condition.test(this)) {
+            consumer.accept(this);
         }
         return this;
     }
