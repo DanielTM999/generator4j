@@ -3,6 +3,7 @@ package dtm.generator.html;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import dtm.generator.html.core.HtmlElement;
 
@@ -143,12 +144,12 @@ public class Header extends HtmlElement{
     }
 
     public Header img(String src, String alt) {
-        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\">";
+        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\"/>";
         return this;
     }
 
     public Header img(String src, String alt, String id) {
-        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\" id=\"" + id + "\">";
+        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\" id=\"" + id + "\"/>";
         return this;
     }
 
@@ -190,4 +191,11 @@ public class Header extends HtmlElement{
         }
         return this;
     }
+
+    public Header conditional(Predicate<Header> condition, Consumer<Header> consumer) {
+        if (condition.test(this)) {
+            consumer.accept(this);
+        }
+        return this;
+    }  
 }

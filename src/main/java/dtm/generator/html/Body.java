@@ -154,12 +154,12 @@ public class Body extends HtmlElement {
     }
 
     public Body img(String src, String alt) {
-        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\">";
+        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\"/>";
         return this;
     }
 
     public Body img(String src, String alt, String id) {
-        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\" id=\"" + id + "\">";
+        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\" id=\"" + id + "\"/>";
         return this;
     }
 

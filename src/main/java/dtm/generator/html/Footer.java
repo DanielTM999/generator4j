@@ -166,12 +166,12 @@ public class Footer  extends HtmlElement{
     }
 
     public Footer img(String src, String alt) {
-        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\">";
+        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\"/>";
         return this;
     }
 
     public Footer img(String src, String alt, String id) {
-        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\" id=\"" + id + "\">";
+        this.content += "<img src=\"" + src + "\" alt=\"" + alt + "\" id=\"" + id + "\"/>";
         return this;
     }
 
