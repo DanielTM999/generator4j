@@ -145,7 +145,7 @@ public class Div extends HtmlElement{
     }
     
     public Div br() {
-        this.content += "<br>";
+        this.content += "</br>";
         return this;
     }
 

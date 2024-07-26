@@ -139,7 +139,7 @@ public class Header extends HtmlElement{
     }
     
     public Header br() {
-        this.content += "<br>";
+        this.content += "</br>";
         return this;
     }
 

@@ -164,7 +164,7 @@ public class Nav extends HtmlElement{
     }
     
     public Nav br() {
-        this.content += "<br>";
+        this.content += "</br>";
         return this;
     }
 

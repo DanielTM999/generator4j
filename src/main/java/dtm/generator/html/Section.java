@@ -145,7 +145,7 @@ public class Section extends HtmlElement {
     }
     
     public Section br() {
-        this.content += "<br>";
+        this.content += "</br>";
         return this;
     }
 

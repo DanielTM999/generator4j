@@ -149,7 +149,7 @@ public class Body extends HtmlElement {
     }
     
     public Body br() {
-        this.content += "<br>";
+        this.content += "</br>";
         return this;
     }
 

@@ -161,7 +161,7 @@ public class Footer  extends HtmlElement{
     }
     
     public Footer br() {
-        this.content += "<br>";
+        this.content += "</br>";
         return this;
     }
 
