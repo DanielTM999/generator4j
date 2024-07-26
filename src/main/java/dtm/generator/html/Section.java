@@ -159,6 +159,16 @@ public class Section extends HtmlElement {
         return this;
     }
 
+    public Section img64(String img64, String alt, String type) {
+        this.content += "<img src=\"data:image/"+type+";base64," + img64 + "\" alt=\"" + alt + "\"/>";
+        return this;
+    }
+
+    public Section img64(String img64, String alt, String id, String type) {
+        this.content += "<img src=\"data:image/"+type+";base64," + img64 + "\" alt=\"" + alt + "\" id=\"" + id + "\"/>";
+        return this;
+    }
+
     public Section table(Consumer<Table> consumer) {
         Table table = new Table();
         consumer.accept(table);
