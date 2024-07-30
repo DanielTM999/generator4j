@@ -50,6 +50,13 @@ public class Div extends HtmlElement{
         return this;
     }
 
+    public Div divCreator(Consumer<Div> consumer) {
+        Div div = new Div();
+        consumer.accept(div);
+        this.content += div.render();
+        return div;
+    }
+
     public Div h1(String text) {
         this.content += "<h1>" + text + "</h1>";
         return this;
