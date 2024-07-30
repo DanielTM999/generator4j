@@ -20,6 +20,12 @@ public class Header extends HtmlElement{
     }
 
     @Override
+    public Header setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
+
+    @Override
     public Header setId(String id) {
         attributes += " id=\"" + id + "\"";
         return this;

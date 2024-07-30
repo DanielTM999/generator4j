@@ -21,4 +21,10 @@ public class Th extends HtmlElement {
         this.content += text;
         return this;
     }
+
+    @Override
+    public Th setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

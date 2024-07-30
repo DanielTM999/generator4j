@@ -50,4 +50,10 @@ public class Tbody extends HtmlElement {
         }
         return this;
     }
+
+    @Override
+    public Tbody setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

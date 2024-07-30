@@ -36,4 +36,10 @@ public class Table extends HtmlElement {
         this.content += text;
         return this;
     }
+
+    @Override
+    public Table setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

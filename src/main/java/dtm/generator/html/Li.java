@@ -21,4 +21,12 @@ public class Li extends HtmlElement {
         this.content += text;
         return this;
     }
+
+    @Override
+    public Li setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
+
+    
 }

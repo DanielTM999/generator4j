@@ -217,5 +217,11 @@ public class Body extends HtmlElement {
             consumer.accept(this);
         }
         return this;
+    }
+
+    @Override
+    public Body setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
     }  
 }

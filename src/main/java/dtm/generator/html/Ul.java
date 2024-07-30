@@ -48,4 +48,10 @@ public class Ul extends HtmlElement {
         }
         return this;
     }
+
+    @Override
+    public Ul setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

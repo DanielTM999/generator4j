@@ -209,5 +209,11 @@ public class Nav extends HtmlElement{
         }
         return this;
     }  
+
+    @Override
+    public Nav setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
     
 }

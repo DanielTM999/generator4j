@@ -18,6 +18,12 @@ public class Div extends HtmlElement{
         }
         return this;
     }
+    
+    @Override
+    public Div setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 
     public <T> Div iterableSection(List<T> items, BiConsumer<T, Section> consumer) {
         for (T item : items) {

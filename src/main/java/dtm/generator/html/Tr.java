@@ -72,4 +72,10 @@ public class Tr extends HtmlElement {
         }
         return this;
     }  
+
+    @Override
+    public Tr setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

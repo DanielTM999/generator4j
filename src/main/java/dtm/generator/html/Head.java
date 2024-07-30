@@ -12,6 +12,12 @@ public class Head extends HtmlElement {
         return this;
     }
 
+    @Override
+    public Head setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
+
     public Head css(String css) {
         this.content += "<link rel=\"stylesheet\" href=\"" + css + "\">";
         return this;

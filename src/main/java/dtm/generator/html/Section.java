@@ -214,4 +214,10 @@ public class Section extends HtmlElement {
         }
         return this;
     }
+
+    @Override
+    public Section setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

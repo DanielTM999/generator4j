@@ -50,4 +50,10 @@ public class Thead extends HtmlElement {
         }
         return this;
     }
+
+    @Override
+    public Thead setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
 }

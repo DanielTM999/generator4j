@@ -18,6 +18,12 @@ public class Footer  extends HtmlElement{
         return this;
     }
 
+    @Override
+    public Footer setStyle(String styleInline) {
+        this.style = styleInline;
+        return this;
+    }  
+
     public Footer setId(String id) {
         attributes += " id=\"" + id + "\"";
         return this;
