@@ -1,6 +1,7 @@
 package dtm.generator.html;
 
 import dtm.generator.html.core.HtmlElement;
+import java.util.function.Consumer;
 
 public class Li extends HtmlElement {
     public Li() {
@@ -19,6 +20,13 @@ public class Li extends HtmlElement {
 
     public Li text(String text) {
         this.content += text;
+        return this;
+    }
+
+    public Li ul(Consumer<Ul> ulConsumer) {
+        Ul ul = new Ul();
+        ulConsumer.accept(ul);
+        this.content += ul.render(); 
         return this;
     }
 

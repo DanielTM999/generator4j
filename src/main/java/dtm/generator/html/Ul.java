@@ -2,7 +2,7 @@ package dtm.generator.html;
 
 import java.util.List;
 import java.util.function.BiConsumer;
-
+import java.util.function.Consumer;
 import dtm.generator.html.core.HtmlElement;
 
 public class Ul extends HtmlElement {
@@ -12,6 +12,13 @@ public class Ul extends HtmlElement {
 
     public Ul li(String text) {
         this.content += "<li>" + text + "</li>";
+        return this;
+    }
+
+    public Ul li(Consumer<Li> liAction) {
+        Li li = new Li();
+        liAction.accept(li);
+        this.content += li.render(); 
         return this;
     }
 
@@ -26,13 +33,11 @@ public class Ul extends HtmlElement {
     }
 
     public Ul ul(String id, String className){
-        this.content += "<ul class=\""+className+"\"">" + text + "</ul>";
-        return this;
+        return new Ul();
     }
 
-    public Ul text(String text) {
-        this.content += text;
-        return this;
+    public Ul text(String text) { 
+        return li(text);
     }
 
 
