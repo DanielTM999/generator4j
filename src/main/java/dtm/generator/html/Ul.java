@@ -25,6 +25,11 @@ public class Ul extends HtmlElement {
         return this;
     }
 
+    public Ul ul(String id, String className){
+        this.content += "<ul class=\""+className+"\"">" + text + "</ul>";
+        return this;
+    }
+
     public Ul text(String text) {
         this.content += text;
         return this;
